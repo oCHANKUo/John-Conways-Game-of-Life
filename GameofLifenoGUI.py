@@ -20,3 +20,15 @@ def randomizeGrid(grid):
     for i in range(len(grid)):
         for j in range(len(grid[0])):
             grid[i][j] = random.choice([0, 1])
+
+def countNeighbours(grid, row, col):
+    neighbours = 0
+    for i in range(-1, 2):
+        for j in range(-1, 2):
+            if i == 0 and j == 0:
+                continue
+            r = row + i
+            c = col + j
+            if 0 <= r < len(grid) and 0 <= c < len(grid[0]):
+                neighbours += grid[r][c]
+    return neighbours
