@@ -7,6 +7,7 @@ def create2DArray(rows, cols):
 
     for row in array: #have to display it row by row cause otherwise it just displays a long horizontal list of lists.
         print(row)
+    return array
 
 # grid = create2DArray(10,10)
 
@@ -35,7 +36,7 @@ def countNeighbours(grid, row, col):
 
 def nextGeneration(grid):
     rows = len(grid)
-    cols = len(grod[0])
+    cols = len(grid[0])
     newGrid = create2DArray(rows, cols)
 
     for i in range(rows):
