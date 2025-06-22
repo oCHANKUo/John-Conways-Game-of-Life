@@ -1,5 +1,10 @@
+
+#this is the same version as the previous game of life with no GUI, but with auto run.
+
 import random
 import os
+import time #got help from ChatGPT to come up with the time inclusion
+
 
 def create2DArray(rows, cols):
     # array =  [[0 for _ in range(cols)] for _ in range(rows)]
@@ -57,10 +62,11 @@ def runGame():
     randomizeGrid(grid)
 
     loops = 50 #this will be the number of generations
+    delay = 0.1 #the time interval between each generation
     for generation in range(loops):
         print(f"Generation {generation + 1}")
         printGrid(grid)
         grid = nextGeneration(grid)
-        input("Press Enter to Continue")
+        time.sleep(delay) #pause between each generation
 
 runGame()
