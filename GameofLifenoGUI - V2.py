@@ -61,10 +61,10 @@ def runGame():
     grid = create2DArray(rows, cols)
     randomizeGrid(grid)
 
-    loops = 50 #this will be the number of generations
+    loops = 100 #this will be the number of generations
     delay = 0.1 #the time interval between each generation
     for generation in range(loops):
-        print(f"Generation {generation + 1}")
+        # print(f"Generation {generation + 1}")  Commented this cus the loops going too fast and this seems like a waste
         printGrid(grid)
         grid = nextGeneration(grid)
         time.sleep(delay) #pause between each generation
