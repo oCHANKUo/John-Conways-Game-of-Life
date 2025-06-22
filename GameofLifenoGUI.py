@@ -48,3 +48,17 @@ def nextGeneration(grid):
                 newGrid[i][j] = 1 if liveNeighbours == 3 else 0
 
     return newGrid
+
+def runGame():
+    rows, cols = 10, 10
+    grid = create2DArray(rows, cols)
+    randomizeGrid(grid)
+
+    loops = 10 #this will be the number of generations
+    for generation in range(loops):
+        print(f"Generation {generation + 1}")
+        printGrid(grid)
+        grid = nextGeneration(grid)
+        input("Press Enter to Continue")
+
+runGame()
