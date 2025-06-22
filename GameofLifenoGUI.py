@@ -32,3 +32,19 @@ def countNeighbours(grid, row, col):
             if 0 <= r < len(grid) and 0 <= c < len(grid[0]):
                 neighbours += grid[r][c]
     return neighbours
+
+def nextGeneration(grid):
+    rows = len(grid)
+    cols = len(grod[0])
+    newGrid = create2DArray(rows, cols)
+
+    for i in range(rows):
+        for j in range(cols):
+            liveNeighbours = countNeighbours(grid, i, j)
+
+            if grid[i][j] == 1:
+                newGrid[i][j] = 1 if 2 <= liveNeighbours <= 3 else 0
+            else:
+                newGrid[i][j] = 1 if liveNeighbours == 3 else 0
+
+    return newGrid
